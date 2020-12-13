@@ -13,7 +13,6 @@ const formDataReducer: Reducer<Array<any>, formDataCountriesActions> = (
 ): Array<CardToRender> => {
   switch (action.type) {
     case formDataActionTypes.SET_DATA:
-      console.log(action.data)
       return action.data;
     default:
       return state;

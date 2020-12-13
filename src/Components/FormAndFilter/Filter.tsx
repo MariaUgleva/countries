@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo } from "react";
+import React, { useState, useCallback, useMemo, useEffect } from "react";
 import { setFilterAction } from "../../Redux/Actions/filterActions";
 import { useDispatch, useSelector } from "react-redux";
 import { AppState } from "../../Redux/Reducers/rootReducer";
@@ -10,14 +10,10 @@ const Filter: React.FC = (): JSX.Element => {
   // состояние открыт/закрыт фльтр
   const [filtersOpen, setVisible] = useState(false);
   // массив фильтров для отрисовки
-  const filters: Array<string> = useMemo(() => [
-    "",
-    "Africa",
-    "Americas",
-    "Asia",
-    "Europe",
-    "Oceania",
-  ], []);
+  const filters: Array<string> = useMemo(
+    () => ["Without filter", "Africa", "Americas", "Asia", "Europe", "Oceania"],
+    []
+  );
   // ф-я открытия/закрытия окошка с фильтрами
   const handleOpenFilters = useCallback(
     (event: React.MouseEvent<HTMLButtonElement>): void => {
@@ -28,6 +24,12 @@ const Filter: React.FC = (): JSX.Element => {
   // ф-я отслеживает нажатие на фильтр и отправляет в редакс нажатый фильтр
   const handleChangeRegion = useCallback(
     (event: React.MouseEvent<HTMLLIElement>) => {
+      if (event.currentTarget.value === 0) {
+        dispatch(setFilterAction(""));
+        setVisible(false);
+        return;
+      }
+      setVisible(false);
       dispatch(setFilterAction(filters[event.currentTarget.value]));
     },
     [dispatch, filters]

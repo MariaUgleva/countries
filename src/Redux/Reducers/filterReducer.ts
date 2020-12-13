@@ -6,7 +6,6 @@ const setFilterReducer: Reducer<string, setFilterType> = (
   state: string = initialState,
   action
 ): string => {
-  console.log(action.filter)
   if (action.type === filterActionTypes.SET_FILTER) return action.filter;
   return state;
 };

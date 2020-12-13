@@ -3,7 +3,7 @@ import { CardToRender } from "../type";
 export const filterCountries = (arr: Array<CardToRender>, filter: string) => {
   if (Array.isArray(arr) && filter)
     return arr.filter((item) => item.region === filter);
-  return [];
+  return arr;
 };
 // находит станы, граничащие с конкретной страной
 export const findBorders = (

@@ -27,7 +27,6 @@ function* setAction(action: requestFetchType) {
 }
 function* fetchFormDataAction(action: requestDataType) {
   try {
-    console.log('req')
     const fetchForm = yield call(() => fetchFormCountries(action.country));
     yield put(setFormDataCountriesAction(fetchForm));
   } catch (e) {
