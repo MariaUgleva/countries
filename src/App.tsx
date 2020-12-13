@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Header from "./Components/Header";
+import { Switch, Route } from "react-router-dom";
+import { ConnectedRouter } from "connected-react-router";
+import { history } from "./index";
+import AllCountries from "./Components/AllCountries";
+import { requestFetchAllCountriesAction } from "./Redux/Actions/AllCountriesActions";
+import SearchResult from "./Components/SearchResult";
+import { AppState } from "./Redux/Reducers/rootReducer";
+import OneCountry from "./Components/OneCountry";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(requestFetchAllCountriesAction());
+  }, [dispatch]);
+  const mode = useSelector((state: AppState) => state.mode);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ConnectedRouter history={history}>
+      <div className={mode.toLocaleLowerCase()}>
+        <Header />        
+        <Switch>
+          <Route exact path="/" component={AllCountries} />
+          <Route exact path="/:id" component={SearchResult} />
+          <Route exact path="/:id/extra" component={OneCountry} />
+        </Switch>
+      </div>
+    </ConnectedRouter>
   );
 }
 

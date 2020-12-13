@@ -1,0 +1,150 @@
+.dark {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #202d36;
+  color: white;
+  .header {
+    background-color: #2b3743;
+    -webkit-box-shadow: 0px 11px 10px -1px rgba(30, 43, 52, 0.42);
+    -moz-box-shadow: 0px 11px 10px -1px rgba(30, 43, 52, 0.42);
+    box-shadow: 0px 11px 10px -1px rgba(30, 43, 52, 0.42);
+    &__mode {
+      &::before {
+        background-image: url(./img/moon.png);
+      }
+    }
+  }
+  .form {
+    background-color: #2b3743;
+    -webkit-box-shadow: 0px 11px 10px -1px rgba(30, 43, 52, 0.42);
+    -moz-box-shadow: 0px 11px 10px -1px rgba(30, 43, 52, 0.42);
+    box-shadow: 0px 11px 10px -1px rgba(30, 43, 52, 0.42);
+    &::before {
+      background-image: url("./img/loupe-white.png");
+    }
+    &__input {
+      color: white;
+      background-color: #2b3743;
+
+      &::placeholder {
+        color: white;
+      }
+    }
+  }
+  .filter__list {
+    color: white;
+    background-color: #2b3743;
+    -webkit-box-shadow: 0px 11px 10px -1px rgba(30, 43, 52, 0.42);
+    -moz-box-shadow: 0px 11px 10px -1px rgba(30, 43, 52, 0.42);
+    box-shadow: 0px 11px 10px -1px rgba(30, 43, 52, 0.42);
+  }
+  .filter__btn {
+    color: white;
+    background-color: #2b3743;
+    -webkit-box-shadow: 0px 11px 10px -1px rgba(30, 43, 52, 0.42);
+    -moz-box-shadow: 0px 11px 10px -1px rgba(30, 43, 52, 0.42);
+    box-shadow: 0px 11px 10px -1px rgba(30, 43, 52, 0.42);
+    &::before {
+      background-image: url("./img/arrow-white.png");
+    }
+  }
+  .card {
+    background-color: #2b3743;
+    color: white;
+    -webkit-box-shadow: 0px 11px 10px -1px rgba(30, 43, 52, 0.42);
+    -moz-box-shadow: 0px 11px 10px -1px rgba(30, 43, 52, 0.42);
+    box-shadow: 0px 11px 10px -1px rgba(30, 43, 52, 0.42);
+  }
+  .country {
+    &__back {
+      background-color: #2b3743;
+      -webkit-box-shadow: 0px 11px 10px -1px rgba(30, 43, 52, 0.42);
+      -moz-box-shadow: 0px 11px 10px -1px rgba(30, 43, 52, 0.42);
+      box-shadow: 0px 11px 10px -1px rgba(30, 43, 52, 0.42);
+      color: white;
+      &::before {
+        background-image: url("./img/left-arrow-white.png");
+      }
+    }
+    &__border-btn {
+      background-color: #2b3743;
+      color: white;
+      -webkit-box-shadow: 0px 11px 10px -1px rgba(30, 43, 52, 0.42);
+      -moz-box-shadow: 0px 11px 10px -1px rgba(30, 43, 52, 0.42);
+      box-shadow: 0px 11px 10px -1px rgba(30, 43, 52, 0.42);
+    }
+  }
+}
+.light {
+  min-height: 100vh;
+  .header {
+    background-color: white;
+    -webkit-box-shadow: 8px 10px 13px -13px rgba(51, 48, 48, 0.2);
+    -moz-box-shadow: 8px 10px 13px -13px rgba(51, 48, 48, 0.2);
+    box-shadow: 8px 10px 13px -13px rgba(51, 48, 48, 0.2);
+    &__mode {
+      &::before {
+        background-image: url(./img/moon-black.png);
+      }
+    }
+  }
+  .form {
+    background-color: white;
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(101, 101, 101, 0.2);
+    -moz-box-shadow: 0px 5px 10px 2px rgba(101, 101, 101, 0.2);
+    box-shadow: 0px 5px 10px 2px rgba(101, 101, 101, 0.2);
+    &::before {
+      background-image: url("./img/loupe-gray.png");
+    }
+    &__input {
+      color: black;
+      background-color: white;
+
+      &::placeholder {
+        color: #828282;
+      }
+    }
+  }
+  .filter {
+    background-color: white;
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(101, 101, 101, 0.2);
+    -moz-box-shadow: 0px 5px 10px 2px rgba(101, 101, 101, 0.2);
+    box-shadow: 0px 5px 10px 2px rgba(101, 101, 101, 0.2);
+    &__list,
+    &__btn {
+      background-color: white;
+      -webkit-box-shadow: 0px 5px 10px 2px rgba(101, 101, 101, 0.2);
+      -moz-box-shadow: 0px 5px 10px 2px rgba(101, 101, 101, 0.2);
+      box-shadow: 0px 5px 10px 2px rgba(101, 101, 101, 0.2);
+    }
+    &__btn::before {
+      background-image: url("./img/arrow-black.png");
+    }
+  }
+  .card {
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(101, 101, 101, 0.2);
+    -moz-box-shadow: 0px 5px 10px 2px rgba(101, 101, 101, 0.2);
+    box-shadow: 0px 5px 10px 2px rgba(101, 101, 101, 0.2);
+    &__info {
+      color: black;
+    }
+  }
+  .country {
+    &__back {
+      background-color: white;
+      -webkit-box-shadow: 0px 5px 10px 2px rgba(101, 101, 101, 0.2);
+      -moz-box-shadow: 0px 5px 10px 2px rgba(101, 101, 101, 0.2);
+      box-shadow: 0px 5px 10px 2px rgba(101, 101, 101, 0.2);
+      &::before {
+        background-image: url("./img/left-arrow-black.png");
+      }
+    }
+    &__border-btn {
+      background-color: white;
+      color: black;
+      -webkit-box-shadow: 0px 5px 10px 2px rgba(101, 101, 101, 0.2);
+      -moz-box-shadow: 0px 5px 10px 2px rgba(101, 101, 101, 0.2);
+      box-shadow: 0px 5px 10px 2px rgba(101, 101, 101, 0.2);
+    }
+  }
+}
